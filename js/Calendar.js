@@ -27,7 +27,7 @@ function getQuantityDays(month) {
 	let quantityDays = new Date(year, month, 0).getDate();
 	return quantityDays;
 }
-
+/*Создание дней каждого месяца*/
 function setDaysByCalendar(month, classNameStart) {
 	// classNameStart - родитель, начало вставки кода
 	let tr;
@@ -61,6 +61,7 @@ function sendReserve() {
 		if(phone != ''){
 		
 			if(date_for_lenght.length > 0){
+				/*Ajax для записи данных в БД*/
 				$.ajax({
 				    type: "POST",
 				    url: '/script/writeDate.php',
@@ -82,10 +83,13 @@ function sendReserve() {
 
 				    			date_bron = [];
 
+								/*Ajax для вовзрата массива уже забронированных дат*/
+
 				    			$.ajax({
 								    type: "POST",
 								    url: '/script/getBooked.php',
 								    success: function(ret){
+
 								    	readyBooked(ret);
 								    },
 								    error: function(xhr, status, error) {

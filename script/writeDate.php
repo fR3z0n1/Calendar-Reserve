@@ -5,7 +5,7 @@
 	$connect = Connection::OpenConnection();
 
 	$date = json_encode($_POST['date_bron']);
-	$phone = $_POST['phone'];/**/
+	$phone = $_POST['phone'];
 
 	if($connect) {
 		$sql = "INSERT INTO `date`(`id`, `date`, `date_at`, `phone`) VALUES (NULL, :date_bron, NULL, :phone)";

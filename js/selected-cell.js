@@ -1,3 +1,4 @@
+/*Наложение события клик по дню месяца*/
 var date_bron = [];
 let spans = document.querySelectorAll('span[data-date]');
 spans.forEach(span => {

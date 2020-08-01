@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 	include('models/Connection.php');
 
@@ -19,7 +19,6 @@
 		}
 	}
 		$dates = json_encode($dates);
-
 ?>
 <!DOCTYPE html>
 <html lang="ru">
@@ -90,21 +89,19 @@
 		</div>
 
 	</div>
-<script src="js/selected-cell.js"></script>
-<script>
-	document.getElementById('enter_phone').onkeypress = onlyNumber; 
-	window.onload = (event) => { readyBooked('<? echo $dates; ?>');	}
-</script>
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@7.12.15/dist/sweetalert2.min.css'>
+<script src="js/selected-cell.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
 <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.min.js" type="text/javascript"></script>
-
 <script>
+	document.getElementById('enter_phone').onkeypress = onlyNumber; 
+	window.onload = (event) => { readyBooked('<? echo $dates; ?>');	}
+
 	$(function(){  
 		$("#enter_phone").mask("+7(999)-999-99-99", { placeholder: "+7(___)-___-__-___"});
-});
+	});
 </script>
 </body>
 </html>
