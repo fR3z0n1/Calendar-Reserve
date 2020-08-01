@@ -1,4 +1,3 @@
-/*359842 https://www.blockchain.com/btc/address/3H2nKdxvLtoK4ZS7gHDMsX6d14B6wbF1Cm*/
 @font-face {
  font-family: "Montserrat";
  src: url("/fonts/Montserrat/Montserrat-Regular.ttf");
@@ -23,9 +22,9 @@
  font-style: normal; 
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Ubuntu', sans-serif; font-weight: 600; }
+* { margin: 0; padding: 0; -webkit-box-sizing: border-box; box-sizing: border-box; font-family: 'Ubuntu', sans-serif; font-weight: 600; }
 html, body { height: 100%; }
-div.calendar { width: 100%; max-width: 1200px; margin: 0 auto; user-select: none;}
+div.calendar { width: 100%; max-width: 1200px; margin: 0 auto; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
 div.one_element { display: inline-block; margin: 0 7px 7px -3px; padding: 0 15px 15px; border: 1px solid #92c29d; border-radius: 3px; background: #ebf5ec;}
 div.caption-month { margin: 0 15px; padding-bottom: 7px; padding-top: 5px; border-bottom: 1px solid #8d978e; color: #1d6739; text-align: center; }
 table.block-weekdays { display: inline-block; margin-top: 13px; text-align: center; border-collapse: separate;}
@@ -33,14 +32,18 @@ table.block-weekdays td { width: 20px; height: 20px; font-size: 10px; background
 table.block-weekdays td.weekend { color: #fff; background: #e2907a;}
 table.block-weekdays tr.clearfix-7 { height: 5px; clear: both; }
 span.border-red { border: 2px solid red; }
-span { display: block; width: 20px; height: 20px; line-height: 18px; cursor: pointer; user-select: none;}
+span { display: block; width: 20px; height: 20px; line-height: 18px; cursor: pointer; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none;}
 div.caption_text { margin-bottom: 35px; }
 div.caption_text h1 { margin: 0; color: #227947; font-weight: 600; }
 div.caption_text p { margin-bottom: 0; margin-top: -5px; font-size: 15px; }
 
 div.bottom_row { margin-top: 15px; }
 div.bottom_row label { display: block; }
-div.bottom_row input#enter_phone { width: 180px; padding: 5px; margin-right: 10px; border: 1px solid #909090; background: #f2f2f2; box-shadow: inset 1px 1px 5px #bfbfbf, inset 1px 1px 0 #bfbfbf; }
+div.bottom_row input#enter_phone { width: 180px; padding: 5px; margin-right: 10px; border: 1px solid #909090; background: #f2f2f2; -webkit-box-shadow: inset 1px 1px 5px #bfbfbf, inset 1px 1px 0 #bfbfbf; box-shadow: inset 1px 1px 5px #bfbfbf, inset 1px 1px 0 #bfbfbf; }
+div.bottom_row input#enter_phone::-webkit-input-placeholder { color: #afafaf; }
+div.bottom_row input#enter_phone::-moz-placeholder { color: #afafaf; }
+div.bottom_row input#enter_phone:-ms-input-placeholder { color: #afafaf; }
+div.bottom_row input#enter_phone::-ms-input-placeholder { color: #afafaf; }
 div.bottom_row input#enter_phone::placeholder { color: #afafaf; }
 button.send_btn { width: 180px; border-radius: 0; background: #68a977; color: #fff; }
 input.send_btn { width: 180px; border-radius: 0; background: #68a977; color: #fff; }
@@ -75,4 +78,4 @@ span.reserve { background: #bfbfbf; }
 	div.calendar { text-align: center; }
 	div.bottom_row input#enter_phone { margin: 0 0 15px 0; }
 	div.one_element { margin: 5px 0 0 0; }
-
+}

@@ -23,7 +23,7 @@ function getNowYear() {
 
 function getQuantityDays(month) {
 	//Нумерация месяцев, где month = 1 - это январь
-	let year = getNowYear();
+	let year 		 = getNowYear();
 	let quantityDays = new Date(year, month, 0).getDate();
 	return quantityDays;
 }
@@ -52,9 +52,9 @@ function setDaysByCalendar(month, classNameStart) {
 function sendReserve() {
 
 	let date_for_lenght = Object.keys(date_bron);
-	let paragrafErrors = document.querySelector('.errors');
-	let phone = $('#enter_phone').val();
-	let isConfirm = confirm("Подтвердите бронирование даты");
+	let paragrafErrors  = document.querySelector('.errors');
+	let phone 			= $('#enter_phone').val();
+	let isConfirm 		= confirm("Подтвердите бронирование даты");
 
 	if(isConfirm) {
 
@@ -63,31 +63,31 @@ function sendReserve() {
 			if(date_for_lenght.length > 0){
 				/*Ajax для записи данных в БД*/
 				$.ajax({
-				    type: "POST",
-				    url: '/script/writeDate.php',
-				    data: {
+				    type : "POST",
+				    url  : '/script/writeDate.php',
+				    data : {
 				      date_bron : date_bron,
-				      phone: phone,
+				      phone 	: phone,
 				    },
 				    success: function(){
 
 				    	for (var i = 0; i < spans.length; i++) {
 							spans[i].classList.remove('border-red');
 						}
-							paragrafErrors.className = 'errors alert alert-success';
-							paragrafErrors.style.display = 'block';
+							paragrafErrors.className 	 	= 'errors alert alert-success';
+							paragrafErrors.style.display 	= 'block';
 							if(date_bron.length > 1)
-								paragrafErrors.textContent = 'Даты забронированы';
+								paragrafErrors.textContent  = 'Даты забронированы';
 							else 
-								paragrafErrors.textContent = 'Дата забронирована';
+								paragrafErrors.textContent  = 'Дата забронирована';
 
 				    			date_bron = [];
 
 								/*Ajax для вовзрата массива уже забронированных дат*/
 
 				    			$.ajax({
-								    type: "POST",
-								    url: '/script/getBooked.php',
+								    type : "POST",
+								    url  : '/script/getBooked.php',
 								    success: function(ret){
 
 								    	readyBooked(ret);
@@ -104,9 +104,9 @@ function sendReserve() {
 					}
 				});
 			} else {
-				paragrafErrors.className = 'errors alert alert-danger';
+				paragrafErrors.className 	 = 'errors alert alert-danger';
 				paragrafErrors.style.display = 'block';
-				paragrafErrors.textContent = 'Не выбрана дата';
+				paragrafErrors.textContent 	 = 'Не выбрана дата';
 			    date_bron = [];
 
 				setTimeout(() => { 
@@ -116,9 +116,9 @@ function sendReserve() {
 
 		} else {
 
-			paragrafErrors.className = 'errors alert alert-danger';
+			paragrafErrors.className 	 = 'errors alert alert-danger';
 			paragrafErrors.style.display = 'block';
-			paragrafErrors.textContent = 'Не верно введён номер телефона';
+			paragrafErrors.textContent 	 = 'Не верно введён номер телефона';
 			setTimeout(() => paragrafErrors.style.display = 'none', 4000 );
 		}
 
