@@ -84,7 +84,7 @@
 				<label for="enter_phone">Укажите телефон:</label>
 				<input id="enter_phone" type="tel" name="tel" placeholder="+7 (___) ___-__-__" autocomplete="off" value="">
 				
-				<input type="button" class="btn send_btn" id="third" onclick="sendReserve(); " value="Забронировать">
+				<input type="button" class="btn send_btn" id="third" onclick="sendReserve();" value="Забронировать">
 			</form>
 		</div>
 
